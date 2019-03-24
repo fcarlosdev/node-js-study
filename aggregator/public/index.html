@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Link Aggregator</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/form.css">
+</head>
+<body>
+  <div class="app-title">
+    <h1>AGGREGATOR</h1>
+  </div>
+  <div class="form-container">
+    <form action="#">
+      <div class="form-fields">
+        <label for="form-title">Title</label>
+        <input type="text" id="form-title">
+      </div>
+      <div class="form-fields">
+        <label for="form-title">Link</label>
+        <input type="text" id="form-link">
+      </div>
+      <div class="form-fields">
+        <label for="form-category">Category</label>
+        <select class="sel-categ">
+          <option value="JS"> JavaScript </option>
+          <option value="PY"> Python </option>
+        </select>
+      </div>
+      <div class="buttons">
+        <button> Add </button>
+        <button onclick="javascrit:closeForm()";>Close</button>
+      </div>
+    </form>
+    <div class="showform">
+      <button class="bt-shform" onclick="javascrit:showForm()";>New Link</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="link-wrapper color-1">
+      <div class="title">JavaScript</div>
+      <div class="description">
+        A collection of useful links that cover various subjects of the JavaScript world.
+      </div>
+      <div class="footer">
+        <a href="/js_links/js"> See the links </a>
+      </div>
+    </div>
+    <div class="link-wrapper color-2">
+      <div class="title">Python</div>
+      <div class="description">
+        A collection of useful links that cover various subjects of the Python world.
+      </div>
+      <div class="footer">
+        <a href="/js"> See the links </a>
+      </div>
+    </div>
+    <div class="link-wrapper color-3">
+      <div class="title">Medium Articles</div>
+      <div class="description">
+        A collection of interest articles of various subjects published at the Medium site.
+      </div>
+      <div class="footer">
+        <a href="/js"> See the links </a>
+      </div>
+    </div>
+    <div class="link-wrapper color-4">
+      <div class="title">Quora Articles</div>
+      <div class="description">
+        A collection of interesting articles published at Quora sites.
+      </div>
+      <div class="footer">
+        <a href="/js"> See the links </a>
+      </div>
+    </div>
+    <div class="link-wrapper color-5">
+      <div class="title">CSS</div>
+      <div class="description">
+        A collection of useful links that cover various subjects of the CSS world.
+      </div>
+      <div class="footer">
+        <a href="/js"> See the links </a>
+      </div>
+    </div>
+    <div class="link-wrapper color-6">
+      <div class="title">Miscelanious</div>
+      <div class="description">
+        A collection ramdom links that cover some interesting subjects.
+      </div>
+      <div class="footer">
+        <a href="/js"> See the links </a>
+      </div>
+    </div>
+    <div class="link-wrapper color-1">
+      <div class="title">Podcasts</div>
+      <div class="description">
+        A collection of interesting podcasts.
+      </div>
+      <div class="footer">
+        <a href="/js"> See the links </a>
+      </div>
+    </div>
+    <div class="link-wrapper color-2">
+      <div class="title">Linux</div>
+      <div class="description">
+        A collection of useful links that cover various subjects of the Linux world.
+      </div>
+      <div class="footer">
+        <a href="/js"> See the links </a>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  closeForm = () => {
+    event.preventDefault();
+    document.querySelector('form').style.display = 'none';
+    document.querySelector('.form-container').style.height = '50px';
+    document.querySelector('.showform').style.display = 'block';
+  }
+
+  showForm = () => {
+    event.preventDefault();
+    document.querySelector('form').style.display = 'flex';
+    document.querySelector('.showform').style.display = 'none';
+    document.querySelector('.form-container').style.height = 'auto';
+  }
+</script>
+</html>
