@@ -1,2 +1,2 @@
-# node-js-study
+# Node JS Projects
 Project with Node JS
