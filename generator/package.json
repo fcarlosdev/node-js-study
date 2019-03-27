@@ -1,0 +1,15 @@
+{
+  "name": "page_genarator",
+  "version": "1.0.0",
+  "description": "Html page generator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "author": "Francisco",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
