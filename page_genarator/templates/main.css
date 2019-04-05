@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -27,14 +28,22 @@ a {
 
 form {
   min-height: 180px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+label {
+  height: 30px;
+  /* margin-bottom: 5px; */
 }
 
 .fields {
-  width: 50%;
+  /* width: 80%; */
   height: 150px;
   display: flex;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   flex-direction: column;
+  /* justify-content: space-between */
 }
 
 input[type="text"], input[type="url"] {
@@ -56,7 +65,7 @@ input[type="submit"]:hover {
 }
 
 .container {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   margin-top: 20px;
   overflow-y: auto;
@@ -66,16 +75,108 @@ input[type="submit"]:hover {
 }
 
 ul {
-  padding: 10px;
+  display: grid;
+  grid-gap: 10px;
   list-style: none;
+  padding: 0  0 5px 0px;
+  grid-template-columns: repeat(2,1fr);
 }
 
-ul li {
-  display:flex;
-  padding: 4px;
-  justify-content: space-between;
+.card {    
+  display: flex;
+  height : 75px;
+  padding-top: 5px;
+  border-radius: 4px;
+  flex-direction: column;
+  border: 1px solid #ccc;
 }
 
-ul li:hover {
-  background-color: burlywood;
+.card-head {
+  display: flex;
+  padding: 2px 6px;
+  justify-content: flex-end;
+}
+
+.link-title {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 10px;
+}
+
+.link-title a {
+  color: #fff;
+}
+
+.btn-close {  
+  width: 20px;
+  height: 20px;
+  color: #333;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.btn-close:hover {
+  font-weight: 600;
+}
+
+
+.blue-card {
+  background-color: #2E86C1;
+}
+
+.red-card {  
+  background-color: darkred;
+}
+
+.green-card {
+  color: #fff;
+  background-color: green;
+}
+
+.orange-card {
+  color: #fff;
+  background-color: #D35400;
+}
+
+/*
+* ScrollBar Styles
+*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c7c6c6; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@media screen and (max-width:980px) {
+  ul {
+    grid-template-columns: 1fr;
+  }  
+}
+
+@media screen and (max-width: 768px) {
+  .container, form {
+    width: 93%;
+  }
+
+  label {
+    margin-bottom: 7px;
+  }
+  
 }
