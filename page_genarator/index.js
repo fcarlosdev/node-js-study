@@ -4,15 +4,10 @@ const path = require("path");
 const { parse } = require("querystring");
 
 const util = require("./libs/util");
+const newItem = require("./libs/list-item");
 
 const CHARSET = "utf8";
 const PORT = process.env.PORT || 5000;
-const CARD_COLORS = ["blue-card", "red-card", "green-card", "orange-card"];
-
-const selectColor = () => {
-  let backColor = CARD_COLORS[Math.floor(Math.random() * Math.floor(6))];
-  return (backColor !== undefined) ? backColor : CARD_COLORS[0];
-}
 
 const createListMarkup = (page, link) => {
   
@@ -21,19 +16,9 @@ const createListMarkup = (page, link) => {
 
   let elements = page.split("\n");
 
-  let newLink = util.leftSpace(`<li class="card ${selectColor()}">\n`, 6);
-  newLink += util.leftSpace(`<div class="card-head">\n`,8);
-  newLink += util.leftSpace(`<div class="btn-close">x</div>\n`,10);
-  newLink += util.leftSpace(`</div>\n`,8);
-  newLink += util.leftSpace(`<div class="link-title">\n`,8);
-  newLink += util.leftSpace(`<a href ="${link.url}">${link.title}</a>\n`, 10);
-  newLink += util.leftSpace(`</div>\n`,8);
-  // newLink += util.leftSpace(`<button onclick="javascript:remove();"> Remove</button>\n`,8);
-  newLink += util.leftSpace(`</li>`, 6);
-
   if (elements.some(e => e.includes("<ul>"))) {
     let liPos = elements.findIndex(e => e.includes("<ul>"));
-    elements.splice(liPos+1, 0, newLink);
+    elements.splice(liPos+1, 0, newItem.createListItem(link));
   } else {
     let from =
       elements.findIndex(e => e.includes(`<div class="container">`)) + 1;
