@@ -1,0 +1,14 @@
+{
+  "name": "node-rest-api",
+  "version": "1.0.0",
+  "description": "Creating a Rest Api in Node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index"
+  },
+  "author": "Francisco Carlos",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
